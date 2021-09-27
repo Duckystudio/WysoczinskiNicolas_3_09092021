@@ -1,0 +1,489 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: auto;
+    padding: 0;
+    width: 100%;
+    max-width: 1500px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+li {
+    list-style-type: none;
+}
+
+h1,
+.loader {
+    font-family: "Shrikhand", "sans-serif";
+}
+
+body,
+html,
+p {
+    font-family: "Roboto", "sans-serif";
+}
+
+.btn__exploration button {
+    background-image: linear-gradient(to left, #9356dc, #b35cdc, #cf64dc, #e86edb, #ff79da);
+    color: white;
+    font-weight: 700;
+    padding: 12px 20px;
+    border: none;
+    transform: scale(1);
+    transition: transform 400ms;
+    box-shadow: inset 0px 0px 1px 0px #C0C0C0;
+    border-radius: 20px;
+}
+
+.btn__exploration button:hover {
+    background-color: #ae80e5;
+    background-blend-mode: lighten;
+    box-shadow: 4px 4px 6px #b2bec3;
+    transform: scale(1.15);
+    cursor: zoom-in;
+}
+
+.btn__fiche {
+    position: relative;
+}
+
+.nouveau {
+    background-color: #99E2D0;
+    border-radius: 5px;
+    border: 7px solid #99E2D0;
+    color: green;
+    margin-top: 10px;
+    position: absolute;
+    left: 70%;
+}
+
+.map {
+    background-color: #dcdcdc;
+    box-shadow: inset 0px 3px 3px 0px #C0C0C0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+}
+
+.map__search input {
+    background-color: #DCDCDC;
+    font-size: 15px;
+    border: none;
+    text-align: center;
+}
+
+.plein:hover {
+    animation: coeur_plein 200ms ease-in-out;
+    display: inline-block;
+    opacity: 1;
+    background: linear-gradient(to left, #9356dc, #b35cdc, #cf64dc, #e86edb, #ff79da);
+    background-clip: -webkit-linear-gradient(to left, #9356dc, #b35cdc, #cf64dc, #e86edb, #ff79da);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+@keyframes coeur_plein {
+    0% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.loader {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    vertical-align: middle;
+    font-family: Shrikhand;
+    font-size: 30px;
+    width: 100%;
+    height: 100%;
+    line-height: 100%;
+    position: fixed;
+    z-index: 3;
+    animation: loading 300ms ease-in-out 3s forwards;
+}
+
+.loader__loading {
+    vertical-align: middle;
+}
+
+.loader__loading--ustensils {
+    animation: rotate 3s linear infinite;
+}
+
+@keyframes loading {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+        z-index: 0;
+    }
+}
+
+@keyframes rotate {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+header {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+header img {
+    width: 60%;
+}
+
+.arrow {
+    position: absolute;
+    top: 8%;
+    left: 15px;
+}
+
+.exploration {
+    background-color: #F5F5F5;
+    text-align: center;
+    padding: 20px;
+}
+
+.exploration h2 {
+    font-weight: 900;
+}
+
+.exploration p {
+    color: #696969;
+    font-weight: 100;
+}
+
+.fonctionnement {
+    margin: 20px;
+}
+
+.fonctionnement__niveau ul {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.fonctionnement__niveau li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    background-color: #F5F5F5;
+    margin: 20px 0 20px;
+    position: relative;
+}
+
+.fonctionnement__niveau--compteur {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #9356dc;
+    color: white;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: -10px;
+}
+
+.fonctionnement h2 {
+    align-items: flex-start;
+}
+
+.fonctionnement ul {
+    padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+    .fonctionnement ul {
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+.fonctionnement ul li {
+    box-shadow: inset 0px 0px 1px 0px #C0C0C0;
+    border-radius: 20px;
+}
+
+@media screen and (min-width: 768px) {
+    .fonctionnement ul li {
+        display: flex;
+        width: 30%;
+    }
+}
+
+.fonctionnement ul li:hover {
+    background-color: #dccfec;
+    background-blend-mode: lighten;
+    box-shadow: 4px 4px 6px #b2bec3;
+}
+
+.fonctionnement ul li:hover .fas {
+    color: blueviolet;
+}
+
+.fonctionnement p {
+    margin-left: 20px;
+    margin-right: 50px;
+}
+
+.fonctionnement .fas {
+    color: grey;
+}
+
+.restaurant {
+    background: #F5F5F5;
+    padding: 20px;
+}
+
+.restaurant h2 {
+    width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .restaurant {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+}
+
+.fiche {
+    position: relative;
+    background: white;
+    margin: 0px;
+    box-shadow: inset 0px 0px 1px 0px #C0C0C0;
+    border-radius: 20px;
+}
+
+@media screen and (min-width: 768px) {
+    .fiche {
+        width: 40%;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .fiche {
+        width: 45%;
+    }
+}
+
+.fiche img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    max-height: 190px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.fiche figure {
+    margin: 0;
+}
+
+.fiche figcaption {
+    position: relative;
+    padding: 10px;
+}
+
+.fiche figcaption h3,
+.fiche figcaption p {
+    margin: 5px;
+}
+
+.fiche figcaption .fa-heart {
+    position: absolute;
+    right: 20px;
+    bottom: 25px;
+}
+
+footer {
+    background-color: #414040;
+    color: white;
+    padding: 20px;
+}
+
+footer h2 {
+    font-size: 20px;
+}
+
+footer ul {
+    padding: 5px 0 5px 0;
+}
+
+footer ul li {
+    padding: 5px 0 5px 0;
+}
+
+footer ul li a {
+    color: white;
+}
+
+footer .fa-hands-helping {
+    margin-right: 10px;
+}
+
+footer .fa-utensils {
+    margin-right: 15px;
+}
+
+.image__header img {
+    object-fit: cover;
+    width: 100%;
+    height: 150px;
+}
+
+.main__menu {
+    text-align: center;
+    background-color: #F5F5F5;
+}
+
+.menu {
+    background-color: #F5F5F5;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    position: relative;
+    top: -29px;
+}
+
+.menu__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+@media screen and (min-width: 1440px) {
+    .menu__full {
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+.starter {
+    animation: fadein 2s ease-in-out;
+}
+
+.maindish {
+    animation: fadein 4s ease-in-out;
+}
+
+.dessert {
+    animation: fadein 6s ease-in-out;
+}
+
+.starter__title--line,
+.maindish__title--line,
+.dessert__title--line {
+    width: 40px;
+    border-bottom: 2px solid #99E2D0;
+    margin-left: 20px;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.dish {
+    background-color: white;
+    margin: 20px;
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    transition: padding-right 450ms ease-in-out;
+    box-shadow: inset 0px 0px 1px 0px #C0C0C0;
+    border-radius: 20px;
+}
+
+.dish:hover {
+    padding-right: 75px;
+}
+
+.dish:hover .check {
+    opacity: 1;
+    transform: translate(-50px);
+}
+
+.dish:hover .fa-check-circle {
+    transform: rotate(360deg);
+}
+
+.dish h4 {
+    text-align: start;
+    margin: 0;
+    padding-top: 5px;
+}
+
+.dish__garnishandprice {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px;
+}
+
+.dish__garnishandprice--garnish {
+    margin: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #99E2D0;
+    width: 50px;
+    height: 100%;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    position: absolute;
+    padding: 20px;
+    right: -50px;
+    top: 0;
+    opacity: 0;
+    transition: transform 330ms ease-in-out;
+}
+
+.check .fa-check-circle {
+    color: #fff;
+    transition: transform 500ms ease-in-out;
+}
