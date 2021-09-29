@@ -281,9 +281,10 @@ header img {
 .fiche {
     position: relative;
     background: white;
-    margin: 0px;
+    margin: 10px;
     box-shadow: inset 0px 0px 1px 0px #C0C0C0;
     border-radius: 20px;
+    padding: 2%;
 }
 
 @media screen and (min-width: 768px) {
